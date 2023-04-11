@@ -1,0 +1,51 @@
+<!-- As Ilhas Growdev formam um reino independente nos mares do Pacífico.
+Como é um reino recente, a sociedade é muito influenciada pela
+informática. A moeda oficial é a GrowCoin; existem notas de GC$ 50,00, GC$ 10,00, GC$ 5,00 e GC$ 1,00. Vocês foram contratados para ajudar na programação dos caixas automáticos de um grande banco das Ilhas Growdevs. 
+Os caixas eletrônicos das Ilhas Growdev operam com todos os tipos de notas disponíveis, mantendo um estoque de cédulas para cada valor. Os clientes do banco utilizam os caixas eletrônicos para efetuar retiradas de um certo número inteiro de GrowCoins.
+Sua tarefa é escrever um algoritmo que, dado o valor de GrowCoins desejado pelo cliente, determine o número de cada uma das notas necessárias para totalizar esse valor. Por exemplo, se o Marcelo deseja retirar GC$ 50,00 basta entregar uma única nota de cinquenta GrowCoins.
+Se o Édson deseja retirar GC$ 72,00 será necessário entregar uma nota de GC$ 50,00, duas de GC$ 10,00 e duas de GC$ 1,00 -->
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilha GrowDev</title>
+  </head>
+  <body>
+    <script>
+          let saque = parseInt(prompt('Digite o valor do saque aqui'))
+          
+          // variáveis de contagem de notas
+          let cinquenta = 0;
+          let dez = 0;
+          let cinco = 0;
+          let um = 0;
+
+          while (saque != 0) {
+            if (saque >= 50) {
+              saque = saque - 50;
+              cinquenta++;
+            } else if (saque >= 10) {
+              saque = saque - 10;
+              dez++;
+            } else if (saque >= 5) {
+              saque = saque - 5;
+              cinco++;
+            } else if (saque >= 1) {
+              saque = saque - 1;
+              um++;
+            } else {
+              // caso não haja notas suficientes ou o saque não seja válido
+              document.write("Não é possível retirar esse valor.");
+              break;
+            }
+          }
+            // exibe a contagem de notas
+            document.write("Notas de GC$ 50,00: " + cinquenta + "<br>");
+            document.write("Notas de GC$ 10,00: " + dez + "<br>");
+            document.write("Notas de GC$ 5,00: " + cinco + "<br>");
+            document.write("Notas de GC$ 1,00: " + um);
+    </script>
+  </body>
+</html>
